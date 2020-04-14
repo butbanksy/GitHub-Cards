@@ -14,7 +14,11 @@ const GitHubCard = (props) => {
   return (
     <div className="col-md-3 p-3 bp3-dark w-50">
       <Card interactive={true} elevation={Elevation.FOUR}>
-        <img className="w-100 mx-auto d-block" src={props.image}></img>
+        <img
+          className="w-100 mx-auto d-block bp3-skeleton"
+          tabIndex="-1"
+          src={props.image}
+        ></img>
         <h5 className="text-center p-3">
           <a target="_blank" href={props.url}>
             {props.name == null ? props.login : props.name}
