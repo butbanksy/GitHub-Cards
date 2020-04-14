@@ -1,27 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import {
   Button,
   Navbar,
-  Icon,
-  Intent,
   InputGroup,
   Alignment,
 } from "@blueprintjs/core";
 
 const NavigationBar = (props) => {
-
   const [input, setInput] = useState("");
 
-
-  const handleInput = (event) => {
-    setInput(event.target.value);
-  };
+  const handleInput = (event) => setInput(event.target.value);
 
   const handleClick = async () => {
     const resp = await axios.get(`https://api.github.com/users/${input}`);
     props.addNewProfile(resp.data);
   };
+  
   return (
     <div className="bp3-dark">
       <Navbar fixedToTop={true} className="bp3-dark container-fluid">

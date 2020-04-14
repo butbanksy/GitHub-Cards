@@ -11,6 +11,7 @@ const GitHubCardsList = (props) => {
       {props.profiles.map((profile) => (
         <GitHubCard
           key={profile.id}
+          id={profile.id}
           name={profile.name}
           bio={profile.bio}
           image={profile.avatar_url}

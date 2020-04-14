@@ -44,7 +44,7 @@ const GitHubCard = (props) => {
                   <MenuItem
                     icon="remove"
                     text="Remove card"
-                    onClick={props.deleteProfile}
+                    onClick={() => props.deleteProfile(props.id)}
                   />
                 </MenuItem>
               </Menu>
