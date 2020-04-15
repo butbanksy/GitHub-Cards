@@ -38,8 +38,9 @@ const App = () => {
       <ReactNotification />
       <NavigationBar addNewProfile={addNewProfile} />
       {/* <GitHubCard /> */}
-
+      <div className="container" id="cardsList" style={{ margin: 50}}>
       <GitHubCardsList profiles={profiles} deleteProfile={deleteProfile} />
+      </div>
     </React.Fragment>
   );
 };

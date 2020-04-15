@@ -9,11 +9,22 @@ import {
   MenuItem,
   MenuDivider,
 } from "@blueprintjs/core";
+import { Animated } from "react-animated-css";
+
 
 const GitHubCard = (props) => {
   return (
-    <div className="col-md-3 p-3 bp3-dark w-50">
-      <Card interactive={true} elevation={Elevation.FOUR}>
+    <div
+      className="col-md-3 p-3 bp3-dark w-50"
+      style={{ width: "100%", height: "100%" }}
+    >
+       <Animated
+          key={props.id}
+          animationIn="bounceInRight"
+          animationOut="fadeOut"
+          isVisible={true}
+        >
+      <Card className="bounceInRight" interactive={true} elevation={Elevation.FOUR}>
         <img
           className="w-100 mx-auto d-block bp3-skeleton"
           tabIndex="-1"
@@ -59,6 +70,7 @@ const GitHubCard = (props) => {
           </Popover>
         </div>
       </Card>
+      </Animated>
     </div>
   );
 };
